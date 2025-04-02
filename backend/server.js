@@ -294,14 +294,14 @@ async function tts(text) {
     const [response] = await client.synthesizeSpeech(request);
   
     // Save the generated binary audio content to a local file
-    file_path = `${uuid()}.mp3`;
+    file_path = `${uuid()}.mp3`; 
     await writeFile(`public/${file_path}`, response.audioContent, 'binary');
     return file_path;
   }
 
 // Generative AI
 const { GoogleGenerativeAI } = require("@google/generative-ai");
-const gemini_api_key = "AIzaSyB4we9OysQ7FS3kA-G4qzIq811VWiU0NQM";
+const gemini_api_key = "API-KEY-HERE";
 
 const googleAI = new GoogleGenerativeAI(gemini_api_key);
 const geminiConfig = {
