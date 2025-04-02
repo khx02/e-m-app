@@ -1,0 +1,41 @@
+<h1 class="mx-4 mb-3">Text to Speech</h1>
+<div class="mx-4">
+<table class="table">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Name</th>
+      <th>Department</th>
+      <th>Licence</th>
+      <th>Is Active</th>
+      <th>Created At</th>
+      <th>Text to Speech</th>
+    </tr>
+  </thead>
+  <tbody>
+      @for(driver of driversDb; track $index) {
+      <tr>
+      <td>{{driver.driver_id}}</td>
+      <td>{{driver.driver_name|uppercase}}</td>
+      <td>{{driver.driver_department}}</td>
+      <td>{{driver.driver_licence}}</td>
+      <td>{{driver.driver_isActive}}</td>
+      <td>{{driver.driver_createdAt}}</td>
+      <td>
+        <button class="btn btn-primary" (click)="textToSpeech(driver)">
+            Speech
+        </button>
+      </td>
+    </tr>
+      }
+  </tbody>
+</table>
+
+@if(savedFileName) {
+    <audio controls>
+        <source src={{savedFileName}} type="audio/mpeg">
+    </audio>    
+}
+
+
+</div>

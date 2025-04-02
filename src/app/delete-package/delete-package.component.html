@@ -1,0 +1,38 @@
+<h1 class="mx-4 mb-3">Delete Package</h1>
+<div class="mx-4">
+  <table class="table">
+  <thead>
+    <tr>
+      <th>Package Id</th>
+      <th>Package Title</th>
+      <th>Package Weight</th>
+      <th>Package Destination</th>
+      <th>Description</th>
+      <th>Created At</th>
+      <th>Is Allocated</th>
+      <th>Driver Id</th>
+      <th>Delete</th>
+    </tr>
+  </thead>
+  <tbody>
+      @for(package of packagesDb; track $index) {
+      <tr>
+        <td>{{package.package_id}}</td>
+        <td>{{package.package_title}}</td>
+        <td>{{package.package_weight| weightConverter:1}}</td>
+        <td>{{package.package_destination}}</td>
+        <td>{{package.description}}</td>
+        <td>{{package.createdAt}}</td>
+        <td>{{package.isAllocated}}</td>
+        <td>{{getDriverIdByMongoId(package.driver_id)}}</td>
+        <td>
+          <button class="btn btn-danger" (click)="deletePackage(package._id)">
+            Delete
+          </button>
+        </td>
+    </tr>
+      }
+  </tbody>
+</table>
+</div>
+    

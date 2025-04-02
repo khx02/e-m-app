@@ -1,0 +1,57 @@
+<h1 class="mx-4 mb-3">Translate the package's description</h1>
+<div class="mx-4">
+  <table class="table">
+  <thead>
+    <tr>
+      <th>Package Id</th>
+      <th>Package Title</th>
+      <th>Package Weight</th>
+      <th>Package Destination</th>
+      <th>Description</th>
+      <th>Created At</th>
+      <th>Is Allocated</th>
+      <th>Driver Id</th>
+      <th>List Driver</th>
+    </tr>
+  </thead>
+  <tbody>
+      @for(package of packagesDb; track $index) {
+      <tr>
+        <td>{{package.package_id}}</td>
+        <td>{{package.package_title}}</td>
+        <td>{{package.package_weight| weightConverter:1}}</td>
+        <td>{{package.package_destination}}</td>
+        <td>{{package.description}}</td>
+        <td>{{package.createdAt}}</td>
+        <td>{{package.isAllocated}}</td>
+        <td>{{getDriverIdByMongoId(package.driver_id)}}</td>
+        <td>
+          <button class="btn btn-primary" (click)="translatePackage(package)">
+            Translate
+          </button>
+        </td>
+    </tr>
+      }
+  </tbody>
+</table>
+
+<br>
+
+<div class="card" >
+    <div class="card-header">
+        Translate:
+    </div>
+    <div class="mx-4 my-3">
+        <label>Target Language: </label>
+        <select [(ngModel)]="target" class="my-2 form-control">
+            <option value="zh">Chinese</option>
+            <option value="ja">Japanese</option>
+            <option value="fr">French</option>
+            <option value="ta">Tamil</option>
+        </select>
+        <h4> {{translation}}</h4>
+    </div>
+</div>
+
+</div>
+    

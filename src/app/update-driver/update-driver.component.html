@@ -1,0 +1,35 @@
+<div class="cover-container d-flex flex-column p-3 mx-5">
+    
+    <header class="masthead mb-auto">
+        <div class="inner">
+            <h1>Update driver</h1>
+        </div>
+    </header>
+
+    <div class="mb-3">
+        <label>Choose a Driver to Update:</label>
+        <br>
+        <select [(ngModel)]="b.id" class="my-2">
+            @for (driver of driversDb; track $index) {
+                <option [value]="driver._id">{{driver.driver_name}}  --- Driver Id: {{driver.driver_id}}</option>
+            }
+        </select>
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label">Driver Licence</label>
+        <input type="text" class="form-control" placeholder="Enter driver's licence (Exactly 5 Alphanumeric)" [(ngModel)]="b.driver_licence">
+    </div>
+
+    <div class="mb-3">
+        <label>Choose a Department:</label>
+        <br>
+        <select id="driver_department" [(ngModel)]="b.driver_department" class="my-2">
+            <option value="Food">Food</option>
+            <option value="Furniture">Furniture</option>
+            <option value="Electronic">Electronic</option>
+        </select>
+    </div>
+
+    <button class="btn btn-primary" (click)="updateDriver()">Update Driver Licence</button>
+</div>

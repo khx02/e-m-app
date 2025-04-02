@@ -1,0 +1,57 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light py-3 mx-2">
+
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+      <div class="navbar-nav">
+        <a class="nav-item nav-link active" href="/">Home</a>
+
+        <a class="nav-item nav-link disabled" href="#" tabindex="-1" aria-disabled="true">|</a>
+
+        <div class="dropdown">
+            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Driver Action
+            </button>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                <a class="dropdown-item" routerLink="drivers" routerLinkActive="active">List Driver</a>
+                <a class="dropdown-item" routerLink="drivers/add-driver" routerLinkActive="active">Add Driver</a>
+                <a class="dropdown-item" routerLink="drivers/delete-driver" routerLinkActive="active">Delete Driver</a>
+                <a class="dropdown-item" routerLink="drivers/update-driver" routerLinkActive="active">Update Driver</a>
+            </div>
+        </div>
+
+        <a class="nav-item nav-link disabled" href="#" tabindex="-1" aria-disabled="true"> </a> 
+
+        <div class="dropdown">
+          <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Package Action
+          </button>
+          <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+              <a class="dropdown-item" routerLink="packages" routerLinkActive="active">List Packages</a>
+              <a class="dropdown-item" routerLink="packages/add-package" routerLinkActive="active">Add Packages</a>
+              <a class="dropdown-item" routerLink="packages/delete-package" routerLinkActive="active">Delete Packages</a>
+              <a class="dropdown-item" routerLink="packages/update-package" routerLinkActive="active">Update Packages</a>
+          </div>
+      </div>
+
+      <a class="nav-item nav-link disabled" href="#" tabindex="-1" aria-disabled="true"> </a> 
+
+
+      <div class="dropdown">
+        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Cloud Services
+        </button>
+        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+            <a class="dropdown-item" routerLink="translate" routerLinkActive="active">Translate</a>
+            <a class="dropdown-item" routerLink="text-to-speech" routerLinkActive="active">Text to Speech</a>
+            <a class="dropdown-item" routerLink="generative-ai" routerLinkActive="active">Generative AI</a>
+        </div>
+    </div>
+        <a class="nav-item nav-link disabled" href="#" tabindex="-1" aria-disabled="true">|</a>
+        <a class="nav-item nav-link" routerLink="stats" routerLinkActive="active">Stats</a>
+        <a class="nav-item nav-link disabled" href="#" tabindex="-1" aria-disabled="true">|</a>
+
+        <a class="nav-item nav-link" routerLink="sign-up" routerLinkActive="active">Sign Up</a>
+        <a class="nav-item nav-link" routerLink="login" routerLinkActive="active">Login</a>
+
+      </div>
+    </div>
+</nav>

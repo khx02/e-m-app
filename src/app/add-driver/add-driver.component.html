@@ -1,0 +1,32 @@
+<div class="cover-container d-flex flex-column p-3 mx-5">
+    
+    <header class="masthead mb-auto">
+        <div class="inner">
+            <h1>Add a new driver</h1>
+        </div>
+    </header>
+
+    <div class="mb-3">
+        <label class="form-label">Driver's Name</label>
+        <input type="text" class="form-control" placeholder="Enter driver's name (3-20 Alphabets)" [(ngModel)]="driver.driver_name">
+    </div>
+
+    <div class="mb-3">
+        <label>Choose a Department:</label>
+        <br>
+        <select id="driver_department" [(ngModel)]="driver.driver_department" class="my-2">
+            <option value="Food">Food</option>
+            <option value="Furniture">Furniture</option>
+            <option value="Electronic">Electronic</option>
+        </select>
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Driver Licence</label>
+        <input type="text" class="form-control" placeholder="Enter driver's licence (Exactly 5 Alphanumeric)" [(ngModel)]="driver.driver_licence">
+    </div>
+    <div class="form-check mb-3">
+        <input type="checkbox" class="form-check-input" id="is_active" [(ngModel)]="driver.driver_isActive">
+        <label class="form-check-label">Is Active</label>
+    </div>
+    <button class="btn btn-primary" (click)="addDriver()">Add new driver</button>
+</div>

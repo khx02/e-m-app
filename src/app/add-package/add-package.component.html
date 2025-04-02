@@ -1,0 +1,45 @@
+<div class="cover-container d-flex flex-column p-3 mx-5">
+    
+    <header class="masthead mb-auto">
+        <div class="inner">
+            <h1>Add a new package</h1>
+        </div>
+    </header>
+
+    <div class="mb-3">
+        <label class="form-label">Package's Title</label>
+        <input type="text" class="form-control" placeholder="Enter package's title (3-15 Alphanumeric)" [(ngModel)]="package.package_title">
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label">Package's Weight</label>
+        <input type="number" class="form-control" placeholder="Enter package's weight (>0)" [(ngModel)]="package.package_weight">
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label">Package's Destination</label>
+        <input type="text" class="form-control" placeholder="Enter package's destination (5-15 Alphanumeric)" [(ngModel)]="package.package_destination">
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label">Package's Description</label>
+        <input type="text" class="form-control" placeholder="Enter package's description (Maximum 30 Characters)" [(ngModel)]="package.description">
+    </div>
+
+    <div class="mb-3">
+        <label>Choose a Driver:</label>
+        <br>
+        <select [(ngModel)]="package.driver_id" class="my-2">
+            @for (driver of driversDb; track $index) {
+                <option [value]="driver._id">{{driver.driver_name}}  --- Driver Id: {{driver.driver_id}}</option>
+            }
+        </select>
+    </div>
+
+    <div class="form-check mb-3">
+        <input type="checkbox" class="form-check-input" id="isAllocated" [(ngModel)]="package.isAllocated">
+        <label class="form-check-label">Is Active</label>
+    </div>
+    <button class="btn btn-primary" (click)="addPackage()">Add new package</button>
+
+</div>

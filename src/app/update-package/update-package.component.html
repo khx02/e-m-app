@@ -1,0 +1,25 @@
+<div class="cover-container d-flex flex-column p-3 mx-5">
+    
+    <header class="masthead mb-auto">
+        <div class="inner">
+            <h1>Update Package</h1>
+        </div>
+    </header>
+
+    <div class="mb-3">
+        <label>Choose a Package to Update:</label>
+        <br>
+        <select [(ngModel)]="b.package_id" class="my-2">
+            @for (p of packageDb; track $index) {
+                <option [value]="p._id">{{p.package_title}}  --- Package Destination: {{p.package_destination}}</option>
+            }
+        </select>
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label">Update Package's Destination</label>
+        <input type="text" class="form-control" placeholder="Enter package's destination (5-15 Alphanumeric)" [(ngModel)]="b.package_destination">
+    </div>
+
+    <button class="btn btn-primary" (click)="updatePackage()">Update Package</button>
+</div>

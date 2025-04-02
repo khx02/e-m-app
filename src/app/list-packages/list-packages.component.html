@@ -1,0 +1,65 @@
+<h1 class="mx-4 mb-3">List of all packages</h1>
+<div class="mx-4">
+  <table class="table">
+  <thead>
+    <tr>
+      <th>Package Id</th>
+      <th>Package Title</th>
+      <th>Package Weight</th>
+      <th>Package Destination</th>
+      <th>Description</th>
+      <th>Created At</th>
+      <th>Is Allocated</th>
+      <th>Driver Id</th>
+      <th>List Driver</th>
+    </tr>
+  </thead>
+  <tbody>
+      @for(package of packagesDb; track $index) {
+      <tr>
+        <td>{{package.package_id}}</td>
+        <td>{{package.package_title}}</td>
+        <td>{{package.package_weight| weightConverter:1}}</td>
+        <td>{{package.package_destination}}</td>
+        <td>{{package.description}}</td>
+        <td>{{package.createdAt}}</td>
+        <td>{{package.isAllocated}}</td>
+        <td>{{getDriverIdByMongoId(package.driver_id)}}</td>
+        <td>
+          <button class="btn btn-primary" (click)="listDrivers(package)">
+            List
+          </button>
+        </td>
+    </tr>
+      }
+  </tbody>
+</table>
+
+@if(currentDisplayedDriver !== null) {
+  <h4 class="mx-4 mb-3">Package Id: {{currentDisplayedPackage.package_id}} Package Title: {{currentDisplayedPackage.package_title}}</h4>
+
+  <table class="table">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Department</th>
+        <th>Licence</th>
+        <th>Is Active</th>
+        <th>Created At</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+        <td>{{currentDisplayedDriver.driver_id}}</td>
+        <td>{{currentDisplayedDriver.driver_name|uppercase}}</td>
+        <td>{{currentDisplayedDriver.driver_department}}</td>
+        <td>{{currentDisplayedDriver.driver_licence}}</td>
+        <td>{{currentDisplayedDriver.driver_isActive}}</td>
+        <td>{{currentDisplayedDriver.driver_createdAt}}</td>
+      </tr>
+    </tbody>
+  </table>
+} 
+</div>
+    
